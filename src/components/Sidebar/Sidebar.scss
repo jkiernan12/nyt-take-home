@@ -1,0 +1,29 @@
+.Sidebar {
+  width: 20%;
+  height: 100%;
+  position: fixed;
+
+  h3 {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding: 10px 0;
+  }
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 10px;
+
+  .category-link {
+    color: rgb(77, 77, 77);
+    text-decoration: none;
+    margin: 12px;
+    font-weight: bold;
+
+    &:hover {
+      color: rgb(20, 98, 208)
+    }
+  }
+}
