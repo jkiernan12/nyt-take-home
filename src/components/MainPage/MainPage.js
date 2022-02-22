@@ -5,7 +5,7 @@ function MainPage() {
   return (
     <main>
       <h1>Times News</h1>
-      <MainSection category="art" />
+      <MainSection category="arts" />
       <MainSection category="science" />
       <MainSection category="sports" />
     </main>
