@@ -1,3 +1,5 @@
+const validCategories = ['arts', 'automobiles', 'books', 'business', 'fashion', 'food', 'health', 'home', 'insider', 'magazine', 'movies', 'nyregion', 'obituaries', 'opinion', 'politics', 'realestate', 'science', 'sports', 'sundayreview', 'technology', 'theater', 't-magazine', 'travel', 'upshot', 'us', 'world']
+
 const cleanSectionData = (data) => {
   return data.results.map(({title, byline, abstract, published_date, url, multimedia}) => {
     return {
@@ -19,8 +21,13 @@ const cleanSectionData = (data) => {
 }
 
 const validateCategory = (category) => {
-  const validCategories = ['arts', 'automobiles', 'books', 'business', 'fashion', 'food', 'health', 'home', 'insider', 'magazine', 'movies', 'nyregion', 'obituaries', 'opinion', 'politics', 'realestate', 'science', 'sports', 'sundayreview', 'technology', 'theater', 't-magazine', 'travel', 'upshot', 'us', 'world']
   return validCategories.some(el => el === category)
 }
 
-export { cleanSectionData, validateCategory }
+const toTitleCase = (word) => {
+  const newWord = word.split('')
+  newWord[0] = newWord[0].toUpperCase()
+  return newWord.join('')
+}
+
+export { validCategories, cleanSectionData, validateCategory, toTitleCase }

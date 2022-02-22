@@ -8,6 +8,9 @@ function MainPage() {
       <MainSection category="arts" />
       <MainSection category="science" />
       <MainSection category="sports" />
+      <MainSection category="food" />
+      <MainSection category="books" />
+      <MainSection category="technology" />
     </main>
   );
 }
