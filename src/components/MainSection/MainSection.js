@@ -20,7 +20,7 @@ function MainSection({category}) {
     return newWord.join('')
   }
   return ( 
-    <section>
+    <section className='section-container'>
       <h2>{toTitleCase(category)}</h2>
       {articles.length > 0 && articles.map((article, i) => {
         if (i < 5) {

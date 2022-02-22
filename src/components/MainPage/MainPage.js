@@ -3,7 +3,7 @@ import './MainPage.scss'
 
 function MainPage() {
   return (
-    <main>
+    <main className='main-container'>
       <h1>Times News</h1>
       <MainSection category="arts" />
       <MainSection category="science" />
