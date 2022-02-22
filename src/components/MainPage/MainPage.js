@@ -1,9 +1,13 @@
+import MainSection from '../MainSection/MainSection';
 import './MainPage.scss'
 
 function MainPage() {
   return (
     <main>
-      Main shere
+      <h1>Times News</h1>
+      <MainSection category="art" />
+      <MainSection category="science" />
+      <MainSection category="sports" />
     </main>
   );
 }
