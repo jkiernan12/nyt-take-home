@@ -2,7 +2,6 @@ import './MainSection.scss'
 import React, { useState, useEffect } from 'react'
 import { getSection } from '../../api-calls'
 
-
 function MainSection({category}) {
   useEffect(() => {
     getSection(category)
