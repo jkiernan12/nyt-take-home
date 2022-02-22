@@ -3,14 +3,29 @@
   justify-content: space-between;
   border: 1px solid lightgray;
   border-radius: 12px;
-  margin: 10px;
+  margin: 12px;
+
+  &:hover {
+    cursor: pointer;
+
+    h4{
+      text-decoration: underline;
+    }
+  }
 
   .article-container--text {
     text-align: left;
-    margin: 10px;
+    margin: 15px;
 
     h4 {
       font-size: 1.5em;
+      margin: 0;
+      transition: .1s;
+    }
+    
+    .byline {
+      color: gray;
+      margin: 3px 0 10px 0;
     }
   }
 
