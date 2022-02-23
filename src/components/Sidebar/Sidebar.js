@@ -10,7 +10,10 @@ function Sidebar() {
       <h3>Categories</h3>
       <div className='categories'>
       {preferredCategories.map(el => {
-        return <NavLink className='category-link' to={`/category/${el}`}>
+        return <NavLink 
+         className={"category-link"}
+         to={`/category/${el}`}
+         key={el}>
         {toTitleCase(el)}</NavLink>
       })}
       </div>

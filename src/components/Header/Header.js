@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.scss'
 
 function Header() {
   return ( 
     <header>
-      <h1>NYT</h1>
+      <Link to="/" >
+        <h1>NYT</h1>
+      </Link>
       <form>
         <button>🔎</button>
         <input className='search' type="search" />
