@@ -1,10 +1,12 @@
 import MainSection from '../MainSection/MainSection';
 import './MainPage.scss'
 import Sidebar from '../Sidebar/Sidebar'
+import Header from '../Header/Header';
 
 function MainPage() {
   return (
     <div className='page'>
+      <Header />
       <Sidebar />
       <main className='main-container'>
         <h1>Times News</h1>
