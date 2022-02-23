@@ -3,4 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  grid-column: 2 / 7;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 }

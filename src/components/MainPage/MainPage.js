@@ -5,7 +5,6 @@ import Sidebar from '../Sidebar/Sidebar'
 function MainPage() {
   return (
     <div className='page'>
-      <div className='sidebar-spacer'></div>
       <Sidebar />
       <main className='main-container'>
         <h1>Times News</h1>

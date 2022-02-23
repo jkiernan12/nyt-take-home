@@ -4,6 +4,8 @@ import { preferredCategories, toTitleCase } from '../../utils';
 
 function Sidebar() {
   return ( 
+    <>
+    <div className='sidebar-spacer'></div>
     <aside className='Sidebar'>
       <h3>Categories</h3>
       <div className='categories'>
@@ -13,6 +15,7 @@ function Sidebar() {
       })}
       </div>
     </aside>
+    </>
    );
 }
 
