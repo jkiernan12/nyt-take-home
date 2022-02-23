@@ -9,7 +9,6 @@ function MainPage() {
       <Header />
       <Sidebar />
       <main className='main-container'>
-        <h1>Times News</h1>
         <MainSection category="arts" />
         <MainSection category="science" />
         <MainSection category="sports" />
