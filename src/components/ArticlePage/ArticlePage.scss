@@ -1,15 +1,11 @@
 .main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  grid-column: 2 / 7;
-  margin-top: 90px;
-  margin-bottom: 8%;
-
 
   .hero-image {
     max-width: 80%;
+  }
+
+  .byline {
+    color: darkgray;
   }
 
   .article-text {

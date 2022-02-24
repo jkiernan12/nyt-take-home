@@ -13,6 +13,7 @@ function ArticlePage() {
       <PageLayout />
       <div className="main-container">
         <h2>{article.title}</h2>
+        <p className="byline">{article.byline}</p>
         <img className="hero-image" src={article.imageLarge.url} />
         <caption>{article.imageLarge.caption}</caption>
         <p className="article-text">{article.abstract} ...</p>
