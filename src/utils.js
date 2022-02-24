@@ -32,4 +32,9 @@ const toTitleCase = (word) => {
   return newWord.join('')
 }
 
-export { validCategories, preferredCategories, cleanSectionData, validateCategory, toTitleCase }
+const toKebabCase = (phrase) => {
+  const newPhrase = phrase.toLowerCase().split(' ')
+  return newPhrase.join('-')
+}
+
+export { validCategories, preferredCategories, cleanSectionData, validateCategory, toTitleCase, toKebabCase }
