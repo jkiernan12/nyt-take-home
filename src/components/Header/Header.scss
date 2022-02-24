@@ -37,3 +37,17 @@ header {
     }
 }
 }
+@media (max-width: 500px) {
+  header {
+    justify-content: space-evenly;
+
+    a {
+      position: relative;
+    }
+
+    form {
+      width: 80%;
+      margin: 10%;
+    }
+  }
+}

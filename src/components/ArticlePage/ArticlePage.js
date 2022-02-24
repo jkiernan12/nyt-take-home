@@ -1,6 +1,5 @@
 import { useLocation } from "react-router-dom"
-import Header from "../Header/Header"
-import Sidebar from "../Sidebar/Sidebar"
+import PageLayout from "../PageLayout/PageLayout"
 import './ArticlePage.scss'
 
 function ArticlePage() {
@@ -11,8 +10,7 @@ function ArticlePage() {
 
   return ( 
     <div className="page">
-      <Sidebar />
-      <Header />
+      <PageLayout />
       <div className="main-container">
         <h2>{article.title}</h2>
         <img className="hero-image" src={article.imageLarge.url} />

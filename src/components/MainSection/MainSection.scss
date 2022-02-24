@@ -8,3 +8,9 @@
     margin: 8px 0 8px 16px;
   }
 }
+
+@media (max-width: 500px) {
+  .section-container {
+    width: 95%;
+  }
+}

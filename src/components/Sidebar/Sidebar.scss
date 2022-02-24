@@ -39,3 +39,21 @@
     background-color: green;
   }
 }
+
+@media (max-width: 500px) {
+
+  .Sidebar {
+    h3 {
+      font-size: .7em
+    }
+
+    .categories {
+      margin: 2px;
+      
+      .category-link {
+        margin: 6px 2px;
+        word-break:break-all;
+      }
+    }
+  }
+}

@@ -38,3 +38,10 @@ a {
     border-radius: 12px;
   }
 }
+
+@media (max-width: 500px) {
+  .article-container {
+    flex-direction: column-reverse;
+    margin: 12px 5px;
+  }
+}
