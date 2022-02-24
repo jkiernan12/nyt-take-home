@@ -1,14 +1,16 @@
 import Header from "../Header/Header"
 import Sidebar from "../Sidebar/Sidebar"
 import './PageLayout.scss'
-import React, { useState } from 'react';
+import React from 'react';
 
 
-function PageLayout({setFilterTerm}) {
+function PageLayout({setFilterTerm, filterTerm}) {
   return ( 
     <>
       <Header 
-      setFilterTerm={setFilterTerm}/>
+      setFilterTerm={setFilterTerm}
+      filterTerm={filterTerm}
+      />
       <Sidebar />
     </>
    );

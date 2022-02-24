@@ -2,7 +2,7 @@ import './MainSection.scss'
 import React, { useState, useEffect } from 'react'
 import { getSection } from '../../api-calls'
 import ArticleCard from '../ArticleCard/ArticleCard'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { validateCategory, toTitleCase } from '../../utils'
 
 function MainSection({category, filterTerm}) {
@@ -35,6 +35,8 @@ function MainSection({category, filterTerm}) {
     })
     console.log(newArticles)
     setSearchArticles(() => newArticles)
+  } else {
+    setSearchArticles(() => [])
   }
   }, [articles, filterTerm])
 
@@ -44,7 +46,7 @@ function MainSection({category, filterTerm}) {
         <Link to={`/category/${currCategory}`}>
           <h2>{currCategory && toTitleCase(currCategory)}</h2>
         </Link>
-        {searchArticles.length > 0 ? searchArticles.map((article, i) => {
+        {searchArticles.length > 0 || filterTerm ? searchArticles.map((article, i) => {
           if (i < maxArticles) {
             return <ArticleCard key={article.url} article={article} />
           }

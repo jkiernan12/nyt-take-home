@@ -16,9 +16,13 @@ function CategoryPage() {
 
   return ( 
     <div className='page'>
-    <PageLayout setFilterTerm={setFilterTerm} />
+    <PageLayout 
+    setFilterTerm={setFilterTerm}
+    filterTerm={filterTerm} />
     <main className='main-container'>
-      <MainSection key={currCategory} category={currCategory} />
+      <MainSection key={currCategory} 
+      filterTerm={filterTerm}
+      category={currCategory} />
     </main>
     </div>
    );

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss'
 
-function Header({setFilterTerm}) {
+function Header({setFilterTerm, filterTerm}) {
   const [searchValue, setSearchValue] = useState('')
 
   function handleSubmit(e) {
@@ -25,6 +25,7 @@ function Header({setFilterTerm}) {
          value={searchValue} 
          onChange={(e) => setSearchValue(() => e.target.value)} />
       </form>
+      {filterTerm && <button className="clear-button" onClick={() => setFilterTerm('')}>Clear search</button>}
     </header>
    );
 }

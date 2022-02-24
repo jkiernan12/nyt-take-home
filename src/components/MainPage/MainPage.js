@@ -1,7 +1,5 @@
 import MainSection from '../MainSection/MainSection'
 import './MainPage.scss'
-import Sidebar from '../Sidebar/Sidebar'
-import Header from '../Header/Header'
 import PageLayout from '../PageLayout/PageLayout'
 import React, { useState } from 'react';
 
@@ -10,14 +8,28 @@ function MainPage() {
 
   return (
     <div className='page'>
-      <PageLayout setFilterTerm={setFilterTerm} />
+      <PageLayout 
+      setFilterTerm={setFilterTerm}
+      filterTerm={filterTerm} />
       <main className='main-container'>
-        <MainSection category="arts" filterTerm={filterTerm} />
-        <MainSection category="science" filterTerm={filterTerm} />
-        <MainSection category="sports" filterTerm={filterTerm} />
-        <MainSection category="food" filterTerm={filterTerm} />
-        <MainSection category="books" filterTerm={filterTerm} />
-        <MainSection category="technology" />
+        <MainSection key="arts"
+          category="arts" 
+          filterTerm={filterTerm} />
+        <MainSection key="science"
+          category="science" 
+          filterTerm={filterTerm} />
+        <MainSection key="sports"
+          category="sports" 
+          filterTerm={filterTerm} />
+        <MainSection key="food"
+          category="food" 
+          filterTerm={filterTerm} />
+        <MainSection key="books"
+          category="books" 
+          filterTerm={filterTerm} />
+        <MainSection key="technology"
+          category="technology"
+          filterTerm={filterTerm} />
       </main>
     </div>
   );
