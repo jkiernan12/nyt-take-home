@@ -5,10 +5,10 @@ import ArticleCard from '../ArticleCard/ArticleCard'
 import { Link, useLocation, useParams } from 'react-router-dom'
 import { validateCategory, toTitleCase } from '../../utils'
 
-function MainSection({category}) {
+function MainSection({category, filterTerm}) {
   const location = useLocation()
-  console.log(location)
   const [articles, setArticles] = useState([])
+  const [searchArticles, setSearchArticles] = useState([])
   const [currCategory, setCurrCategory] = useState(category)
   const [maxArticles, setMaxArticles] = useState(5)
 
@@ -22,12 +22,21 @@ function MainSection({category}) {
     if (validateCategory(currCategory)) {
       getSection(currCategory)
       .then(data => {
-        console.log('fetch ran')
         const newArticles = [...articles, ...data]
         setArticles(() => newArticles)
       })
     }
   }, [location])
+
+  useEffect(() => {
+   if (filterTerm) { 
+     const newArticles = [...articles].filter(article => {
+      return article.title.toLowerCase().includes(filterTerm) || article.abstract.toLowerCase().includes(filterTerm)
+    })
+    console.log(newArticles)
+    setSearchArticles(() => newArticles)
+  }
+  }, [articles, filterTerm])
 
   return ( 
     <>
@@ -35,7 +44,11 @@ function MainSection({category}) {
         <Link to={`/category/${currCategory}`}>
           <h2>{currCategory && toTitleCase(currCategory)}</h2>
         </Link>
-        {articles.map((article, i) => {
+        {searchArticles.length > 0 ? searchArticles.map((article, i) => {
+          if (i < maxArticles) {
+            return <ArticleCard key={article.url} article={article} />
+          }
+        }) : articles.map((article, i) => {
           if (i < maxArticles) {
             return <ArticleCard key={article.url} article={article} />
           }
