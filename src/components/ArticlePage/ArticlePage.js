@@ -17,10 +17,10 @@ function ArticlePage() {
         <img className="hero-image" src={article.imageLarge.url} />
         <caption>{article.imageLarge.caption}</caption>
         <p className="article-text">{article.abstract} ...</p>
-        <a  href={article.url} target="_blank"><button className="read-more-button">Read more</button></a>
+        <a  href={article.url} target="_blank" rel="noreferrer"><button className="read-more-button">Read more</button></a>
       </div>
     </div>
-   )
+  )
 }
 
 export default ArticlePage

@@ -21,23 +21,23 @@ function MainSection({category, filterTerm}) {
 
     if (validateCategory(currCategory)) {
       getSection(currCategory)
-      .then(data => {
-        const newArticles = [...articles, ...data]
-        setArticles(() => newArticles)
-      })
+        .then(data => {
+          const newArticles = [...articles, ...data]
+          setArticles(() => newArticles)
+        })
     }
   }, [location])
 
   useEffect(() => {
-   if (filterTerm) { 
-     const newArticles = [...articles].filter(article => {
-      return article.title.toLowerCase().includes(filterTerm) || article.abstract.toLowerCase().includes(filterTerm)
-    })
-    console.log(newArticles)
-    setSearchArticles(() => newArticles)
-  } else {
-    setSearchArticles(() => [])
-  }
+    if (filterTerm) { 
+      const newArticles = [...articles].filter(article => {
+        return article.title.toLowerCase().includes(filterTerm) || article.abstract.toLowerCase().includes(filterTerm)
+      })
+      console.log(newArticles)
+      setSearchArticles(() => newArticles)
+    } else {
+      setSearchArticles(() => [])
+    }
   }, [articles, filterTerm])
 
   return ( 
@@ -57,7 +57,7 @@ function MainSection({category, filterTerm}) {
         })}
       </section>}
     </>
-   );
+  )
 }
 
-export default MainSection;
+export default MainSection

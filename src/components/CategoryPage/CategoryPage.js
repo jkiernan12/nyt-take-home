@@ -16,16 +16,16 @@ function CategoryPage() {
 
   return ( 
     <div className='page'>
-    <PageLayout 
-    setFilterTerm={setFilterTerm}
-    filterTerm={filterTerm} />
-    <main className='main-container'>
-      <MainSection key={currCategory} 
-      filterTerm={filterTerm}
-      category={currCategory} />
-    </main>
+      <PageLayout 
+        setFilterTerm={setFilterTerm}
+        filterTerm={filterTerm} />
+      <main className='main-container'>
+        <MainSection key={currCategory} 
+          filterTerm={filterTerm}
+          category={currCategory} />
+      </main>
     </div>
-   );
+  )
 }
 
-export default CategoryPage;
+export default CategoryPage

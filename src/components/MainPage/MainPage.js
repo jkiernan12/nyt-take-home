@@ -1,7 +1,7 @@
 import MainSection from '../MainSection/MainSection'
 import './MainPage.scss'
 import PageLayout from '../PageLayout/PageLayout'
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 function MainPage() {
   const [filterTerm, setFilterTerm] = useState('')
@@ -9,8 +9,8 @@ function MainPage() {
   return (
     <div className='page'>
       <PageLayout 
-      setFilterTerm={setFilterTerm}
-      filterTerm={filterTerm} />
+        setFilterTerm={setFilterTerm}
+        filterTerm={filterTerm} />
       <main className='main-container'>
         <MainSection key="arts"
           category="arts" 
@@ -32,7 +32,7 @@ function MainPage() {
           filterTerm={filterTerm} />
       </main>
     </div>
-  );
+  )
 }
 
-export default MainPage;
+export default MainPage
