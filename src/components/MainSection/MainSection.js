@@ -9,7 +9,7 @@ function MainSection({category, filterTerm}) {
   const location = useLocation()
   const [articles, setArticles] = useState([])
   const [searchArticles, setSearchArticles] = useState([])
-  const [currCategory, setCurrCategory] = useState(category)
+  const [currCategory] = useState(category)
   const [maxArticles, setMaxArticles] = useState(5)
 
   useEffect(() => {
@@ -33,7 +33,6 @@ function MainSection({category, filterTerm}) {
       const newArticles = [...articles].filter(article => {
         return article.title.toLowerCase().includes(filterTerm) || article.abstract.toLowerCase().includes(filterTerm)
       })
-      console.log(newArticles)
       setSearchArticles(() => newArticles)
     } else {
       setSearchArticles(() => [])
@@ -49,10 +48,14 @@ function MainSection({category, filterTerm}) {
         {searchArticles.length > 0 || filterTerm ? searchArticles.map((article, i) => {
           if (i < maxArticles) {
             return <ArticleCard key={article.url} article={article} />
+          } else {
+            return undefined
           }
         }) : articles.map((article, i) => {
           if (i < maxArticles) {
             return <ArticleCard key={article.url} article={article} />
+          } else {
+            return undefined
           }
         })}
       </section>}

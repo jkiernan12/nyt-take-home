@@ -12,7 +12,7 @@ function CategoryPage() {
 
   useEffect(() => {
     setCurrCategory(() => categoryName)
-  }, [location])
+  }, [location, categoryName])
 
   return ( 
     <div className='page'>

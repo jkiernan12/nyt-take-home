@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import { Route, Routes } from 'react-router-dom'
 import MainPage from './components/MainPage/MainPage'
 import CategoryPage from './components/CategoryPage/CategoryPage'
