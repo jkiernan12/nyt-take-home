@@ -2,10 +2,11 @@ import './MainSection.scss'
 import React, { useState, useEffect } from 'react'
 import { getSection } from '../../api-calls'
 import ArticleCard from '../ArticleCard/ArticleCard'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { validateCategory, toTitleCase } from '../../utils'
 
 function MainSection({category, filterTerm}) {
+  const navigate = useNavigate()
   const location = useLocation()
   const [articles, setArticles] = useState([])
   const [searchArticles, setSearchArticles] = useState([])
@@ -25,6 +26,11 @@ function MainSection({category, filterTerm}) {
           const newArticles = [...articles, ...data]
           setArticles(() => newArticles)
         })
+        .catch(err => {
+          navigate('/network-error')
+        })
+    } else {
+      navigate('/error')
     }
   }, [location])
 
@@ -45,6 +51,7 @@ function MainSection({category, filterTerm}) {
         <Link to={`/category/${currCategory}`}>
           <h2>{currCategory && toTitleCase(currCategory)}</h2>
         </Link>
+        {searchArticles.length === 0 && filterTerm && <p className="search-error">Hmm... looks like there aren't any results. Try changing your search terms.</p>}
         {searchArticles.length > 0 || filterTerm ? searchArticles.map((article, i) => {
           if (i < maxArticles) {
             return <ArticleCard key={article.url} article={article} />
